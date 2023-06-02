@@ -1,1 +1,1 @@
-# arry-leetcode
+# Array-leetcode
