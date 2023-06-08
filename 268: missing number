@@ -1,0 +1,32 @@
+// cyclic sort , amazone 
+class Solution {
+    public int missingNumber(int[] nums) {
+      int i =0;
+	    while(i<nums.length){
+	        int correct= nums[i];
+	        if(nums[i] <nums.length && nums[i] != nums[correct]){
+	            swap(nums , i ,correct);
+	        }
+	        else{
+	            i++;
+	        }
+	        
+	    }
+
+			//search for missing number
+			for(int index =0 ; index < nums.length; index++  ){
+				//case1 : finding the index which is not equal to element and that index is thge answer
+				if(nums[index] != index){
+					return index ;
+				}
+			}
+			//case2 : if n is not present in the array then the ans is N
+			return nums.length;
+	   
+	} 
+	static void swap(int[] nums , int first , int second){
+	        int temp = nums[first];
+	        nums[first]= nums[second];
+	        nums[second]=  temp;
+	    }  
+    }
